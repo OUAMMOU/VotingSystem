@@ -1,0 +1,17 @@
+
+<!-- Candidates
+<UL class="text-center">
+   Votez pour <li *ngFor="let candidat of Candidates">
+    <button (click)=VoteUpdate(candidat.id) class="btn btn-success">{{candidat.name}}</button> <br>
+   </li>
+  <br>
+</UL> -->
+<h2 class="text-center">Merci {{utilisateur}} d'avoire reponde à votre devoire national </h2>
+<div class="text-center">
+ <h3> Veuillez votez pour</h3> <br> 
+  <p *ngFor="let candidat of Candidates">
+    <br>
+   <button (click)=VoteUpdate(candidat.id) class="btn btn-success">{{candidat.name}}</button> <br>
+  </p>
+ <br>
+</div>

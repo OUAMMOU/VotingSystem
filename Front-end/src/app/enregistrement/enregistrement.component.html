@@ -1,0 +1,70 @@
+<div class="bg">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="container">
+                <br>
+                <h1 class="text-center">s'enregistrer</h1>
+                <div class="alert alert-warning" *ngIf='message'>{{message}}</div>
+                <form (ngSubmit)=FindByIdNational()>
+
+                    <fieldset class="form-group">
+                        <label>Nom</label>
+                        <input type="text" [(ngModel)]="citizen.name" name="nom" required="required"
+                            class="form-control" ngModel minlength="3">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Prenom</label>
+                        <input type="text" [(ngModel)]="citizen.prenom" name="prnom" required="required"
+                            class="form-control" ngModel minlength="3">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Date de Naissance</label>
+                        <input type="date" #targetform="ngModel" [ngModel]="citizen.dateNaissance | date:'yyyy-MM-dd'"
+                            (ngModelChange)="citizen.dateNaissance= $event" class="form-control" name="Target Date"
+                            required="required">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Adresse</label>
+                        <input type="text" [(ngModel)]="citizen.adresse" name="adresse" required="required"
+                            class="form-control" ngModel minlength="10">
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <label>Ientifiant National </label>
+                        <input type="text" [(ngModel)]="citizen.idNational" name="IDnationnal" required="required"
+                            class="form-control" ngModel minlength="4">
+                    </fieldset>
+                    <button type="submit" class="btn btn-success">Enregistrez</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <br>
+                <h1 class="text-center">Administration
+                </h1>
+                <form (ngSubmit)=FindAdministrator()>
+
+                    <fieldset class="form-group">
+                        <label>Email</label>
+                        <input type="text" [(ngModel)]="Admin.email" name="Email" required="required"
+                            class="form-control" ngModel minlength="10">
+                    </fieldset>
+                    <label>password</label>
+                        <fieldset class="form-group">
+                            <input type="password" [(ngModel)]="Admin.password" name="password" required="required"
+                                class="form-control" ngModel minlength="3">
+                        </fieldset>
+                        <button type="submit" class="btn btn-success">se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="alert alert-warning" *ngIf='ivalidelogin'>{{errorMessage}}</div> -->
+
+</div>
